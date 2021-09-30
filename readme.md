@@ -1,0 +1,1 @@
+Bu proje C# dili ile birlikte Devexpress arayüzü kullanılarak geliştirilmiş bir satış otomasyonudur.
