@@ -2,6 +2,9 @@
 
 use BerkayAkarDevexpressTicariOtomasyon
 
+
+
+
 create table musteriler (
 ID int identity(1,1) primary key,
 AD varchar(50),
@@ -53,7 +56,8 @@ URUNKATEGORI int,
 STOKADET int,
 DURUM BIT,
 )
-
+select * from Urunler
+insert into urunler values('LXGIVLY','SİEMENS',1,'A++ ENERJİ TASARRUFLU BUZDOLABI',1,50,0)
 
 create table STOKLAR(
 ID int identity(1,1) primary key,
