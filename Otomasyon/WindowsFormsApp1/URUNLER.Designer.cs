@@ -41,15 +41,25 @@ namespace WindowsFormsApp1
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Urun_Ad = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Richtxt_Aciklama = new System.Windows.Forms.RichTextBox();
+            this.chck_Kritiklik_Durumu = new DevExpress.XtraEditors.CheckEdit();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cmb_Kategori = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txt_Model = new System.Windows.Forms.TextBox();
+            this.Txt_Marka = new System.Windows.Forms.TextBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chck_Kritiklik_Durumu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Kategori.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -142,27 +152,30 @@ namespace WindowsFormsApp1
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(15, 290);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 457);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(191, 44);
+            this.simpleButton1.Size = new System.Drawing.Size(135, 44);
             this.simpleButton1.TabIndex = 18;
             this.simpleButton1.Text = "Kaydet";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // textBox1
+            // txt_Urun_Ad
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 19;
+            this.txt_Urun_Ad.Location = new System.Drawing.Point(84, 79);
+            this.txt_Urun_Ad.Name = "txt_Urun_Ad";
+            this.txt_Urun_Ad.Size = new System.Drawing.Size(165, 21);
+            this.txt_Urun_Ad.TabIndex = 19;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.textBox3);
-            this.groupControl1.Controls.Add(this.textBox2);
-            this.groupControl1.Controls.Add(this.textBox1);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.Richtxt_Aciklama);
+            this.groupControl1.Controls.Add(this.chck_Kritiklik_Durumu);
+            this.groupControl1.Controls.Add(this.numericUpDown1);
+            this.groupControl1.Controls.Add(this.cmb_Kategori);
+            this.groupControl1.Controls.Add(this.txtID);
+            this.groupControl1.Controls.Add(this.txt_Model);
+            this.groupControl1.Controls.Add(this.Txt_Marka);
+            this.groupControl1.Controls.Add(this.txt_Urun_Ad);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -171,52 +184,119 @@ namespace WindowsFormsApp1
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(575, 12);
+            this.groupControl1.Location = new System.Drawing.Point(617, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(213, 426);
+            this.groupControl1.Size = new System.Drawing.Size(264, 489);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "groupControl1";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // textBox2
+            // Richtxt_Aciklama
             // 
-            this.textBox2.Location = new System.Drawing.Point(84, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 20;
+            this.Richtxt_Aciklama.Location = new System.Drawing.Point(15, 280);
+            this.Richtxt_Aciklama.Name = "Richtxt_Aciklama";
+            this.Richtxt_Aciklama.Size = new System.Drawing.Size(239, 204);
+            this.Richtxt_Aciklama.TabIndex = 27;
+            this.Richtxt_Aciklama.Text = "";
             // 
-            // textBox3
+            // chck_Kritiklik_Durumu
             // 
-            this.textBox3.Location = new System.Drawing.Point(84, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 21;
+            this.chck_Kritiklik_Durumu.Location = new System.Drawing.Point(84, 219);
+            this.chck_Kritiklik_Durumu.Name = "chck_Kritiklik_Durumu";
+            this.chck_Kritiklik_Durumu.Properties.Caption = "Kritik Seviyede Mi ?";
+            this.chck_Kritiklik_Durumu.Size = new System.Drawing.Size(122, 20);
+            this.chck_Kritiklik_Durumu.TabIndex = 26;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 192);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(165, 21);
+            this.numericUpDown1.TabIndex = 25;
+            // 
+            // cmb_Kategori
+            // 
+            this.cmb_Kategori.Location = new System.Drawing.Point(84, 165);
+            this.cmb_Kategori.Name = "cmb_Kategori";
+            this.cmb_Kategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_Kategori.Size = new System.Drawing.Size(165, 20);
+            this.cmb_Kategori.TabIndex = 24;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(84, 52);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(165, 21);
+            this.txtID.TabIndex = 23;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            // 
+            // txt_Model
+            // 
+            this.txt_Model.Location = new System.Drawing.Point(84, 139);
+            this.txt_Model.Name = "txt_Model";
+            this.txt_Model.Size = new System.Drawing.Size(165, 21);
+            this.txt_Model.TabIndex = 21;
+            // 
+            // Txt_Marka
+            // 
+            this.Txt_Marka.Location = new System.Drawing.Point(84, 110);
+            this.Txt_Marka.Name = "Txt_Marka";
+            this.Txt_Marka.Size = new System.Drawing.Size(165, 21);
+            this.Txt_Marka.TabIndex = 20;
             // 
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(15, 377);
+            this.simpleButton2.Location = new System.Drawing.Point(153, 457);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(191, 44);
+            this.simpleButton2.Size = new System.Drawing.Size(135, 44);
             this.simpleButton2.TabIndex = 22;
-            this.simpleButton2.Text = "Kaydet";
+            this.simpleButton2.Text = "Güncelle";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(294, 457);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(134, 44);
+            this.simpleButton3.TabIndex = 23;
+            this.simpleButton3.Text = "Sil";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(434, 457);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(135, 44);
+            this.simpleButton4.TabIndex = 24;
+            this.simpleButton4.Text = "Ara";
             // 
             // URUNLER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 445);
+            this.ClientSize = new System.Drawing.Size(883, 513);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.simpleButton2);
             this.Name = "URUNLER";
             this.Text = "URUNLER";
             this.Load += new System.EventHandler(this.URUNLER_Load);
+            this.Click += new System.EventHandler(this.URUNLER_Click);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chck_Kritiklik_Durumu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Kategori.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,10 +314,17 @@ namespace WindowsFormsApp1
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Urun_Ad;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Model;
+        private System.Windows.Forms.TextBox Txt_Marka;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.RichTextBox Richtxt_Aciklama;
+        private DevExpress.XtraEditors.CheckEdit chck_Kritiklik_Durumu;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_Kategori;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

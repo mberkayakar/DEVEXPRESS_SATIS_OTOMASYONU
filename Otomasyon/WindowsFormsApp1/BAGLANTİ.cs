@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     {
         public SqlConnection sqlbaglantisi() { 
         
-            SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-S15EUPN;Initial Catalog=BerkayAkarDevexpressTicariOtomasyon;Integrated Security=True");
+            SqlConnection baglan = new SqlConnection(@"Data Source=MONSTER-ABRA-A5;Initial Catalog=BerkayAkarDevexpressTicariOtomasyon;Integrated Security=True");
             baglan.Open();
             return baglan;
         }

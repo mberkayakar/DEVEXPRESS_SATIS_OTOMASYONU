@@ -81,23 +81,23 @@ namespace WindowsFormsApp1
             {
        
 
-                SqlCommand komut = new SqlCommand("İnsert into Urunler (URUNAD, MARKA, URUNACIKLAMA) values (@p1,@p2,@p3)", baglan.sqlbaglantisi());
-                komut.Parameters.AddWithValue("@p1", textBox1.Text);
-                komut.Parameters.AddWithValue("@p2", textBox2.Text);
-                komut.Parameters.AddWithValue("@p3", textBox3.Text);
-                /*      komut.Parameters.AddWithValue("@p4", ritchtxtAciklama.Text);
-                      komut.Parameters.AddWithValue("@p5", Convert.ToInt32(txtkategori.Text));
-                      komut.Parameters.AddWithValue("@p6", Convert.ToInt32(txtdurum.Text));
-                      komut.Parameters.AddWithValue("@p7", Convert.ToInt32(txtdurum.Text)); */
+                SqlCommand komut = new SqlCommand("insert into Urunler values (@p1,@p2,@p3,@p4,@p5,@p6,@p7)", baglan.sqlbaglantisi());
+                komut.Parameters.AddWithValue("@p1", txt_Urun_Ad.Text);
+                 komut.Parameters.AddWithValue("@p2", Txt_Marka.Text);
+                komut.Parameters.AddWithValue("@p3", txt_Model.Text);
+                komut.Parameters.AddWithValue("@p4", Richtxt_Aciklama.Text);
+                komut.Parameters.AddWithValue("@p5", Convert.ToInt32(cmb_Kategori.SelectedItem));  //
+                komut.Parameters.AddWithValue("@p6", Convert.ToInt32(numericUpDown1.Value));
+                komut.Parameters.AddWithValue("@p7", Convert.ToBoolean(chck_Kritiklik_Durumu.Checked));
                 komut.ExecuteNonQuery();
                 baglan.sqlbaglantisi().Close();
                 MessageBox.Show("Ürün eklemesi Başarı ile gerçekleşti");
                 listele();
 
             }
-            catch (Exception)
+            catch (Exception hata)
             {
-                MessageBox.Show("patladı geçmiş olsun");
+                MessageBox.Show("Bir hata ile karşılaşıldı Lütfen hata mesajını sistem yöneticilerine bildirin. ", hata.Message.ToString());
                
             }
         }
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
         void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from Urunler",baglan.sqlbaglantisi());
+            SqlDataAdapter da = new SqlDataAdapter("sp_Tum_Urunleri_Listele", baglan.sqlbaglantisi());
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
@@ -118,6 +118,8 @@ namespace WindowsFormsApp1
         private void URUNLER_Load(object sender, EventArgs e)
         {
             listele();
+            txtID.Enabled = false;
+            numericUpDown1.Maximum = decimal.MaxValue;
         }
 
         private void ritchtxtAciklama_TextChanged(object sender, EventArgs e)
@@ -125,32 +127,55 @@ namespace WindowsFormsApp1
 
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        public bool urunsilme(int id)
         {
-
             try
             {
-
-
                 SqlCommand komut = new SqlCommand("delete from Urunler where ID= @p1", baglan.sqlbaglantisi());
-                komut.Parameters.AddWithValue("@p1", Convert.ToInt32(textBox1.Text));
+                komut.Parameters.AddWithValue("@p1", id);
                 komut.ExecuteNonQuery();
                 baglan.sqlbaglantisi().Close();
-                MessageBox.Show("Ürün silindi");
+                MessageBox.Show("Ürün Silme İşlemi Başarılı");
                 listele();
-
+                return true;
             }
             catch (Exception)
             {
                 MessageBox.Show("patladı geçmiş olsun");
-
+                return false;
             }
+
+        }
+
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+           
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            txtID.Enabled = true;
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            textBox1.Text = dr["URUNAD"].ToString();
+            txt_Urun_Ad.Text = dr["URUNAD"].ToString();
+        }
+
+        private void URUNLER_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            txtID.Enabled = true;
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            urunsilme(Convert.ToInt32(txtID.Text));
+            listele();
+
         }
     }
 }
